@@ -1,7 +1,15 @@
-kafka:
-  topic:
-    user-random-topic: user-random-topic
+kafka.topic:
+  user-random-topic: user-random-topic
+  user-created-topic: user-created-topic
 
 spring:
   kafka:
     bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.LongSerializer
+      value-deserializer: org.springframework.kafka.support.serializers.JsonSerializer
+#      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+#      properties:
+#        schema:
+#          registry:
+#            url: "http://127.0.0.1:8081"
