@@ -18,7 +18,7 @@ public class UserController {
 
     @Value("${kafka.topic.user-random-topic}")
     private String KAFKA_RANDOM_USER_TOPIC;
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaTemplate<Long, String> kafkaTemplate;
     private final UserService userService;
 
     @PostMapping

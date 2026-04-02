@@ -1,4 +1,4 @@
-package com.example.learnKafka.notification_service.event;
+package com.example.learnKafka.user_service.event;
 
 import lombok.Data;
 
