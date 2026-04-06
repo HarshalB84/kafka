@@ -1,7 +1,6 @@
 package com.example.learnKafka.user_service.controller;
 
 import com.example.learnKafka.user_service.dto.CreateUserRequestDto;
-import com.example.learnKafka.user_service.event.UserCreatedEvent;
 import com.example.learnKafka.user_service.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

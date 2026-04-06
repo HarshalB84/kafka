@@ -1,8 +1,8 @@
 package com.example.learnKafka.user_service.service;
 
+import com.example.learnKafka.event.UserCreatedEvent;
 import com.example.learnKafka.user_service.dto.CreateUserRequestDto;
 import com.example.learnKafka.user_service.entity.User;
-import com.example.learnKafka.user_service.event.UserCreatedEvent;
 import com.example.learnKafka.user_service.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -28,6 +28,7 @@ public class UserService {
         User savedUser = userRepository.save(user);
 
         UserCreatedEvent userCreatedEvent = modelMapper.map(savedUser, UserCreatedEvent.class);
+        System.out.println(userCreatedEvent);
         kafkaTemplate.send(KAFKA_USER_CREATED_TOPIC, userCreatedEvent.getId(), userCreatedEvent);
 
     }
